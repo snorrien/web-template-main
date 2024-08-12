@@ -28,7 +28,7 @@ module.exports = () => {
         resolve: {
             extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.sass'],
             fallback: { process: false },
-            modules: [__dirname, 'node_modules']
+            modules: [__dirname, 'node_modules'],
         },
         devServer: {
             hot: true,

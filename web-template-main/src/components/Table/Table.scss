@@ -1,0 +1,47 @@
+$bg-color: #A1A1AA;
+
+@mixin grid {
+    display: grid;
+    grid-template-columns: 110px auto 200px 200px 200px 200px;
+    column-gap:20px;
+}
+
+
+.table {
+    width: auto;
+    background-color: #202124;
+    padding: 0 8px;
+
+    .table-header {
+        @include grid;
+        border-bottom: 1px solid #414144;
+        height: 40px;
+        padding-left: 12px;
+
+        .table-title {
+            color: #A1A1AA;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .row {
+        min-height: 60px;
+        @include grid;
+        border-bottom: 1px solid #414144;
+
+        .data{
+            height: 100%;
+            display: flex;
+            align-items: center; 
+        }
+    }
+
+    .edit{
+        height: 100%;
+            display: flex;
+            align-items: center;
+    }
+
+}

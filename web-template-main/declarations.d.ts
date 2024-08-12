@@ -28,9 +28,10 @@ declare module '*.ico' {
     export default path
 }
 
-declare module '*.svg' {
-    import type { FunctionComponent, SVGProps } from "react"
 
-    const component: FunctionComponent<SVGProps<SVGSVGElement>>
-    export default component
-}
+declare module '*.svg' {
+    import React from 'react';
+    const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    export { ReactComponent };
+    export default ReactComponent;
+  }

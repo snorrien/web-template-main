@@ -1,4 +1,5 @@
 import './App.style.scss'
+import { Main } from './components/Main/Main'
 
 export function App() {
     const params = Object.entries({
@@ -9,5 +10,15 @@ export function App() {
         showinfo: 0
     }).map(([key, value]) => `${key}=${value}`).join('&')
 
-    return <iframe src={'https://youtube.com/embed/BNflNL40T_M?' + params} />
+    const HeaderItems = [
+        { label: 'Просмотр', link: '1' },
+        { label: 'Управление', link: '2' }
+    ]
+
+    return (
+        <div>
+            <Main menuList={HeaderItems} headerList={HeaderItems} />
+        </div>
+
+    )
 }
