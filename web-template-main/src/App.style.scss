@@ -24,3 +24,7 @@ input{
       -moz-appearance: textfield;
     }
 }
+
+img, video, canvas {
+  overflow: visible;
+}

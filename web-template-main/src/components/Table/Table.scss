@@ -1,4 +1,7 @@
 $bg-color: #A1A1AA;
+$bg-color-two: #414144;
+$bg-color-three: #27272A;
+$bg-color-four: #202124;
 
 @mixin grid {
     display: grid;
@@ -6,36 +9,23 @@ $bg-color: #A1A1AA;
     column-gap: 20px;
 }
 
-
 .table {
     width: auto;
-    background-color: #202124;
+    background-color: $bg-color-four;
     padding: 0 8px;
 
     .table-header {
         @include grid;
-        border-bottom: 1px solid #414144;
+        border-bottom: 1px solid $bg-color-two;
         height: 40px;
         padding-left: 12px;
 
         .table-title {
-            color: #A1A1AA;
+            color: $bg-color;
             height: 100%;
             display: flex;
             align-items: center;
             padding: 0 8px;
-        }
-    }
-
-    .row {
-        min-height: 60px;
-        @include grid;
-        border-bottom: 1px solid #414144;
-
-        .data {
-            height: 100%;
-            display: flex;
-            align-items: center;
         }
     }
 

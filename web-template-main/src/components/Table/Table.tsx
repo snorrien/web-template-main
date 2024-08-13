@@ -9,11 +9,19 @@ interface TableProps {
 }
 
 export function Table({ titleList }: TableProps) {
-  const [data, setData] = useState<RowData[]>([]);
+  const [rows, setRows] = useState<RowData[]>([]);
 
   useEffect(() => {
-    fetchData().then(r => setData(r));
+    async function fetchRows() {
+      const result = await fetchData();
+      setRows(result);
+    }
+    fetchRows();
   }, []);
+
+  function handleSetChilder(row: RowData[]): void {
+    setRows(row)
+  }
 
   return (
     <div className="table">
@@ -22,12 +30,16 @@ export function Table({ titleList }: TableProps) {
           <div className="table-title" key={index}>{title}</div>
         ))}
       </div>
-      {data.map(row => (
-        <Row
-          key={row.id}
-          data={row}
-          level={1} />
-      ))}
+      <div className="table-content">
+        {rows.map(row => (
+          <div className='data' key={row.id}>
+            <Row
+              data={row}
+              parentChildren={rows}
+              setParentChildren={handleSetChilder} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

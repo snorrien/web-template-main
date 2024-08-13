@@ -6,22 +6,31 @@ import ArrowIcon from '../../../assets/icons/arrow.svg';
 import SquareIcon from '../../../assets/icons/square.svg';
 import { Table } from '../Table/Table';
 
-
-interface MenuItem {
-    label: string;
-    link?: string;
-}
-
-interface MenuProps {
-    headerList: MenuItem[];
-    menuList: MenuItem[];
-}
-
-export function Main({ headerList, menuList }: MenuProps) {
-    const [activeHeaderItem, setActiveHeaderItem] = useState<number | null>(null);
-    const [activeMenuItem, setActiveMenuItem] = useState<number | null>(null);
+export function Main() {
+    const [activeHeaderItem, setActiveHeaderItem] = useState(0);
+    const [activeMenuItem, setActiveMenuItem] = useState(4);
     const [showMenu, setShowMenu] = useState(true);
 
+    const headerList = [
+        { label: 'Просмотр', link: '1' },
+        { label: 'Управление', link: '2' }
+    ]
+
+    const menuList = [
+        { label: 'По проекту', link: '1' },
+        { label: 'Объекты', link: '2' },
+        { label: 'РД', link: '3' },
+        { label: 'МТО', link: '4' },
+        { label: 'СМР', link: '5' },
+        { label: 'График', link: '6' },
+        { label: 'МиМ', link: '7' },
+        { label: 'Рабочие', link: '8' },
+        { label: 'Капвложения', link: '9' },
+    ]
+
+    const TitleList = [
+        "Уровень", "Наименование работ", "Основная з/п", "Оборудование", "Накладные расходы", "Сметная прибыль"
+    ]
 
     const handlePageClick = (index: number) => {
         setActiveHeaderItem(index);
@@ -35,10 +44,6 @@ export function Main({ headerList, menuList }: MenuProps) {
         setShowMenu(!showMenu);
     };
 
-
-    const TitleList = [
-        "Уровень", "Наименование работ", "Основная з/п", "Оборудование", "Накладные расходы", "Сметная прибыль"
-    ]
     return (
         <div className="main">
             <div className="container">
@@ -68,7 +73,6 @@ export function Main({ headerList, menuList }: MenuProps) {
                 </div>
                 <div className="title">Строительно-монтажные работы</div>
             </div>
-
             <div className="page-content">
                 <div className={`menu ${showMenu ? "show" : ""}`}>
                     <ul className="menu-list">
