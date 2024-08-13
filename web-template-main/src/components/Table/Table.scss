@@ -3,7 +3,7 @@ $bg-color: #A1A1AA;
 @mixin grid {
     display: grid;
     grid-template-columns: 110px auto 200px 200px 200px 200px;
-    column-gap:20px;
+    column-gap: 20px;
 }
 
 
@@ -23,6 +23,7 @@ $bg-color: #A1A1AA;
             height: 100%;
             display: flex;
             align-items: center;
+            padding: 0 8px;
         }
     }
 
@@ -31,17 +32,16 @@ $bg-color: #A1A1AA;
         @include grid;
         border-bottom: 1px solid #414144;
 
-        .data{
+        .data {
             height: 100%;
             display: flex;
-            align-items: center; 
+            align-items: center;
         }
     }
 
-    .edit{
+    .edit {
         height: 100%;
-            display: flex;
-            align-items: center;
+        display: flex;
+        align-items: center;
     }
-
 }

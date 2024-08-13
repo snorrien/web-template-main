@@ -1,13 +1,17 @@
 .input {
     min-height: 36px;
     border-radius: 6px;
-    border: 1px solid #414144;
+    border: 1px solid #202124;
     padding: 0 8px;
     background-color: #202124;
-    color:white;
+    color: white;
 
     &::placeholder {
         color: #71717A
     }
 
+}
+
+.editing {
+    border: 1px solid #414144;
 }

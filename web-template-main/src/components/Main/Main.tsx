@@ -64,7 +64,7 @@ export function Main({ headerList, menuList }: MenuProps) {
                         <div>Название проекта</div>
                         <div className="sm-text">Аббревиатура</div>
                     </div>
-                    <ArrowIcon className={`arrow ${showMenu ? "rotated" : ""}`} />
+                    <ArrowIcon className={`arrow ${!showMenu && "rotated"}`} />
                 </div>
                 <div className="title">Строительно-монтажные работы</div>
             </div>

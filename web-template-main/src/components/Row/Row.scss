@@ -1,0 +1,98 @@
+.nested-list {
+    border: none;
+    position: relative;
+
+    &.has-child {
+        &::before {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 30px;
+
+            width: 16px;
+            height: calc(100% - 60px);
+            /* Высота линии до последнего дочернего элемента */
+            border-left: 1px solid #C6C6C6;
+            border-bottom: 1px solid #C6C6C6;
+        }
+    }
+
+
+    .list-item {
+        border-bottom: 1px solid #414144;
+        min-height: 60px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .list-buttons {
+        display: flex;
+        padding: 3px;
+        margin: 0 13px;
+        gap: 7px;
+        width: 55px;
+
+        &:hover {
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: #414144;
+        }
+
+        .button {
+            display: flex;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .list-item {
+        border-bottom: 1px solid #414144;
+        min-height: 60px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .input-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto 200px 200px 200px 200px;
+        column-gap: 20px;
+    }
+
+
+    .children-list {
+        position: relative;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: -90px;
+            bottom: 0;
+            width: 13px;
+            height: 60px;
+            border-left: 1px solid #C6C6C6;
+            border-bottom: 1px solid #C6C6C6;
+        }
+    
+        &>.nested-list:first-child::before {
+            display: none;
+        }
+    
+        &>.nested-list:not(:first-child)::before {
+            top: 30px;
+        }
+    
+        &>.nested-list:last-child::before {
+            height: 30px;
+        }
+    }
+}
